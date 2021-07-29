@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled(Grid)`
-	background: red;
+	background: #0293bf;
 	ul {
 		padding: 0;
 		margin: 0;
