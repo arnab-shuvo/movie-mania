@@ -1,15 +1,13 @@
 import { ActionTypes } from '../../actionTypes';
 
-const initialState: GenreState = {
-	genres: [],
-};
+const initialState: GenreState = {};
 
 const genreReducer = (state = initialState, action: any): GenreState => {
 	switch (action.type) {
-		case ActionTypes.SET_ALL_GENRE:
+		case ActionTypes.SET_ALL_GENRE_MOVIE:
 			return {
 				...state,
-				genres: action.payload,
+				movieListByGenre: action.payload,
 			};
 		default:
 			return state;
