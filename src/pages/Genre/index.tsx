@@ -1,13 +1,31 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchAllgenre } from '../../store/actions/genreAction';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
+import GenreView from './genre-view';
+import Grid from '@material-ui/core/Grid';
+import { fetchMoviesOfSingleGenre } from 'store/actions/genreAction';
+type IParams = {
+	genreId: string;
+};
 
 const Genre: React.FC = () => {
-	const params = useParams();
-	console.log(params, '===params');
+	const dispatch = useDispatch();
+	const { genreId } = useParams<IParams>();
+	const { name, movieListByGenre } = useSelector((state: any) => state.genreReducer);
 
-	return <>Genre</>;
+	useEffect(() => {
+		if (movieListByGenre && !movieListByGenre[genreId].movieList.length) {
+			alert('asdasd');
+			dispatch(fetchMoviesOfSingleGenre(genreId));
+		}
+	}, [movieListByGenre, genreId, dispatch]);
+
+	return (
+		<>
+			<p>asd</p>
+			{movieListByGenre && <GenreView genreData={movieListByGenre} genreId={genreId} />}
+		</>
+	);
 };
 
 export default Genre;

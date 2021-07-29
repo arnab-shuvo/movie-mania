@@ -14,7 +14,6 @@ export const fetchAllgenre = () => {
 		data.genres.forEach((el: IGenre) => {
 			genreIds[el.id] = {
 				name: el.name,
-				loading: true,
 				movieList: [],
 			};
 		});
@@ -26,7 +25,18 @@ export const fetchMoviesByGenre = (id: string) => {
 		const { genreReducer } = getState();
 		const data = await getMovieByGenreId(id);
 		const { movieListByGenre } = genreReducer;
-		movieListByGenre[id].movieList = data.results.length > 5 ? data.results.slice(0, 5) : data.results.length;
+		movieListByGenre[id].movieList = data.results.length > 10 ? data.results.slice(0, 10) : data.results.length;
+		dispatch(setAllGenreMovie(movieListByGenre));
+	};
+};
+export const fetchMoviesOfSingleGenre = (id: string) => {
+	return async (dispatch: any, getState: any) => {
+		const { genreReducer } = getState();
+		const data = await getMovieByGenreId(id);
+		const { movieListByGenre } = genreReducer;
+		const result = data.results.length > 10 ? data.results.slice(0, 10) : data.results.length;
+
+		movieListByGenre[id].movieList = result.sort((a: IMovie, b: IMovie) => b.vote_average - a.vote_average);
 		dispatch(setAllGenreMovie(movieListByGenre));
 	};
 };

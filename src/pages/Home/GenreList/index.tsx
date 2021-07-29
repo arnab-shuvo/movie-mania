@@ -6,17 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesByGenre } from 'store/actions/genreAction';
 import MovieListByGenre from './MovieListByGenre';
 
-type GenreList = {
+type IGenreList = {
 	genre: GenreMovieInfo;
 	id: string;
 };
 
-const GenreList: React.FC<GenreList> = ({ genre, id }) => {
+const GenreList: React.FC<IGenreList> = ({ genre, id }) => {
 	const { movieListByGenre } = useSelector((state: any) => state.genreReducer);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchMoviesByGenre(id));
-	}, [dispatch]);
+	}, [dispatch, id]);
+
+	const movieList = movieListByGenre[id].movieList.slice(0, 5);
 
 	return (
 		<GenreListWrapper container>
@@ -24,7 +26,7 @@ const GenreList: React.FC<GenreList> = ({ genre, id }) => {
 				<p className='section-header'>{genre.name}</p>
 			</Grid>
 			<Grid container item md={12} lg={12} spacing={2}>
-				{!movieListByGenre[id].movieList.length ? <BulletList /> : <MovieListByGenre movieList={movieListByGenre[id].movieList} />}
+				{!movieListByGenre[id].movieList.length ? <BulletList /> : <MovieListByGenre genreId={id} movieList={movieList} />}
 			</Grid>
 		</GenreListWrapper>
 	);

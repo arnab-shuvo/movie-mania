@@ -20,7 +20,6 @@ interface IMovie {
 }
 interface GenreMovieInfo {
 	name: string;
-	loading: boolean;
 	movieList: IMovie[];
 }
 interface IGenreMovie {

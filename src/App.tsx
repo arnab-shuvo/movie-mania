@@ -6,12 +6,14 @@ import Home from './pages/Home';
 import Layout from './components/Layout';
 import { useDispatch } from 'react-redux';
 import { fetchAllConfiguration } from 'store/actions/configurationAction';
+import { fetchAllgenre } from 'store/actions/genreAction';
 
 const App: React.FC = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchAllConfiguration());
-	}, []);
+		dispatch(fetchAllgenre());
+	}, [dispatch]);
 	return (
 		<Layout>
 			<Router>
@@ -19,10 +21,10 @@ const App: React.FC = () => {
 					<Route exact path='/'>
 						<Home />
 					</Route>
-					<Route exact path='/genres/:genreId'>
+					<Route exact path='/genre/:genreId'>
 						<Genre />
 					</Route>
-					<Route exact path='/movies/:movieId'>
+					<Route exact path='/movie/:movieId'>
 						<Movie />
 					</Route>
 					<Route path='*'>

@@ -6,9 +6,7 @@ export const get = async (endpoint: string, params: any = null) => {
 	url.searchParams.append('api_key', REACT_APP_API_KEY);
 	if (params) {
 		Object.keys(params).forEach((key) => {
-			console.log(params[key], '=-==params[key]');
-
-			url.searchParams.append(key, '16,28,12,35,80');
+			url.searchParams.append(key, params[key]);
 		});
 	}
 
@@ -28,7 +26,7 @@ export const get = async (endpoint: string, params: any = null) => {
 
 export const getMovieByGenreId = async (genres: string) => {
 	try {
-		const response = await fetch(`${REACT_APP_API_BASE_URL}discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=${genres}`, {
+		const response = await fetch(`${REACT_APP_API_BASE_URL}discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=${genres}&sort_by=popularity.desc`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
