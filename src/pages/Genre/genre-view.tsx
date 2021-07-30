@@ -10,8 +10,6 @@ type IProps = {
 
 const GenreView: React.FC<IProps> = ({ genreData, genreId }) => {
 	const { movieList } = genreData[parseInt(genreId)];
-	console.log(genreData[12], '=======movieList');
-
 	return (
 		<GenreMoviesWrapper>
 			<Grid container justifyContent='center'>

@@ -15,17 +15,11 @@ const Genre: React.FC = () => {
 
 	useEffect(() => {
 		if (movieListByGenre && !movieListByGenre[genreId].movieList.length) {
-			alert('asdasd');
 			dispatch(fetchMoviesOfSingleGenre(genreId));
 		}
 	}, [movieListByGenre, genreId, dispatch]);
 
-	return (
-		<>
-			<p>asd</p>
-			{movieListByGenre && <GenreView genreData={movieListByGenre} genreId={genreId} />}
-		</>
-	);
+	return <>{movieListByGenre && <GenreView genreData={movieListByGenre} genreId={genreId} />}</>;
 };
 
 export default Genre;

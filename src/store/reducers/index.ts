@@ -4,6 +4,7 @@ import sessionStorage from 'redux-persist/lib/storage/session';
 import genreReducer from './genreReducer';
 import userReducer from './userReducer';
 import configurationReducer from './ConfigurationReducer';
+import movieReducer from './MovieReducer';
 
 const persistConfig = {
 	key: 'root',
@@ -15,6 +16,7 @@ const reducers = combineReducers({
 	persistedStore: persistedReducer,
 	genreReducer,
 	configurationReducer,
+	movieReducer,
 });
 
 export default reducers;

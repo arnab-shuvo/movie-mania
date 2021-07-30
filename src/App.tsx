@@ -28,7 +28,7 @@ const App: React.FC = () => {
 						<Movie />
 					</Route>
 					<Route path='*'>
-						<>asdasd</>
+						<Home />
 					</Route>
 				</Switch>
 			</Router>

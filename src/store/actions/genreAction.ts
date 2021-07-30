@@ -25,7 +25,8 @@ export const fetchMoviesByGenre = (id: string) => {
 		const { genreReducer } = getState();
 		const data = await getMovieByGenreId(id);
 		const { movieListByGenre } = genreReducer;
-		movieListByGenre[id].movieList = data.results.length > 10 ? data.results.slice(0, 10) : data.results.length;
+		movieListByGenre[id].movieList =
+			data.results.length > 10 ? data.results.slice(0, 10) : data.results;
 		dispatch(setAllGenreMovie(movieListByGenre));
 	};
 };
@@ -34,9 +35,11 @@ export const fetchMoviesOfSingleGenre = (id: string) => {
 		const { genreReducer } = getState();
 		const data = await getMovieByGenreId(id);
 		const { movieListByGenre } = genreReducer;
-		const result = data.results.length > 10 ? data.results.slice(0, 10) : data.results.length;
+		const result = data.results.length > 10 ? data.results.slice(0, 10) : data.results;
 
-		movieListByGenre[id].movieList = result.sort((a: IMovie, b: IMovie) => b.vote_average - a.vote_average);
+		movieListByGenre[id].movieList = result.sort(
+			(a: IMovie, b: IMovie) => b.vote_average - a.vote_average,
+		);
 		dispatch(setAllGenreMovie(movieListByGenre));
 	};
 };
