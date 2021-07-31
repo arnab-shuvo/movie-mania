@@ -80,9 +80,18 @@ type IMovieDetails = {
 	release_date: string;
 	status: string;
 };
+
+type IPopularMovies = {
+	id: number;
+	backdrop_path: string | null;
+	title: string;
+	overview: string;
+	vote_average: number;
+};
 interface IMovieReducer {
 	movieDetails?: IMovieDetails;
 	credits?: ICredit;
 	imageList?: IImages;
 	similarMovies?: IMovieDetails;
+	popularMovies?: IPopularMovies[];
 }

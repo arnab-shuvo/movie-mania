@@ -112,3 +112,20 @@ export const getSimilarMovies = async (id: string) => {
 		console.error(err);
 	}
 };
+export const getPopularMovies = async () => {
+	try {
+		const response = await fetch(
+			`${REACT_APP_API_BASE_URL}movie/popular?api_key=${REACT_APP_API_KEY}`,
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			},
+		);
+
+		return await response.json();
+	} catch (err) {
+		console.error(err);
+	}
+};

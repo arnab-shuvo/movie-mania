@@ -77,7 +77,7 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 								</Grid>
 								{!watchedListIds.includes(movieDetails.id) && (
 									<div className='related-info'>
-										<button onClick={addToWatched}>
+										<button className='add-to-watch' onClick={addToWatched}>
 											<span>+</span> Add To Watch List
 										</button>
 									</div>

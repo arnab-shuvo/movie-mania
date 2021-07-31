@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 import { useDispatch } from 'react-redux';
 import { fetchAllConfiguration } from 'store/actions/configurationAction';
 import { fetchAllgenre } from 'store/actions/genreAction';
+import { fetchPopularMovies } from 'store/actions/movieAction';
 import Watchlist from 'pages/WatchList';
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
 	useEffect(() => {
 		dispatch(fetchAllConfiguration());
 		dispatch(fetchAllgenre());
+		dispatch(fetchPopularMovies());
 	}, [dispatch]);
 	return (
 		<Layout>

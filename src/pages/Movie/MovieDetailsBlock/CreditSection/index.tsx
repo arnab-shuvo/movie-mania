@@ -1,14 +1,14 @@
-import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import SwiperCore, { Pagination } from 'swiper/core';
+import 'swiper/components/navigation/navigation.min.css';
+import SwiperCore, { Pagination, Navigation } from 'swiper/core';
 import { CreditSectionWrapper, CreditImage } from './styled';
 import { useSelector } from 'react-redux';
 import { imageBuilder } from 'lib/image-builder';
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation]);
 
 type IProps = {
 	creditData: ICrew[] | ICast[];
@@ -26,6 +26,7 @@ const CreditSection: React.FC<IProps> = ({ creditData, title }) => {
 				slidesPerView={title === 'Crew' ? 8 : 5}
 				spaceBetween={10}
 				pagination={false}
+				navigation={true}
 				className='mySwiper'>
 				{creditData.map((credit: CreditSingle, index: number) => (
 					<SwiperSlide>

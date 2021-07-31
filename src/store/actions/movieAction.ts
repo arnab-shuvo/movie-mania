@@ -1,4 +1,10 @@
-import { getMovieDetils, getMovieCredits, getMovieImages, getSimilarMovies } from '../../lib/api';
+import {
+	getMovieDetils,
+	getMovieCredits,
+	getMovieImages,
+	getSimilarMovies,
+	getPopularMovies,
+} from '../../lib/api';
 import { ActionTypes } from '../actionTypes';
 
 export const setMovieDetails = (data: {
@@ -26,5 +32,17 @@ export const fetchMovieDetail = (id: string) => {
 				similarMovies,
 			}),
 		);
+	};
+};
+
+export const setPopularMovieDetails = (popularMovies: IPopularMovies) => ({
+	type: ActionTypes.SET_POPULAR_DETAILS,
+	payload: popularMovies,
+});
+export const fetchPopularMovies = () => {
+	return async (dispatch: any) => {
+		const popularMovies = await getPopularMovies();
+
+		dispatch(setPopularMovieDetails(popularMovies.results.slice(0, 5)));
 	};
 };

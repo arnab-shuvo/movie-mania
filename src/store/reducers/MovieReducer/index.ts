@@ -12,6 +12,11 @@ const movieReducer = (state = initialState, action: any): IMovieReducer => {
 				imageList: action.payload.imageList,
 				similarMovies: action.payload.similarMovies,
 			};
+		case ActionTypes.SET_POPULAR_DETAILS:
+			return {
+				...state,
+				popularMovies: action.payload,
+			};
 		default:
 			return state;
 	}
