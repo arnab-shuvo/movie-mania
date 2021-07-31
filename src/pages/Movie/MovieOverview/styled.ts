@@ -45,7 +45,7 @@ export const OverviewWrapper = styled(Grid)`
 					font-weight: bold;
 				}
 			}
-			button {
+			.add-to-watch {
 				background: #0293bf;
 				padding: 20px 30px;
 				font-size: 22px;

@@ -1,19 +1,19 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
-import sessionStorage from 'redux-persist/lib/storage/session';
+import storage from 'redux-persist/lib/storage/session';
 import genreReducer from './genreReducer';
-import userReducer from './userReducer';
+import watchedListReducer from './watchedListReducer';
 import configurationReducer from './ConfigurationReducer';
 import movieReducer from './MovieReducer';
 
 const persistConfig = {
 	key: 'root',
-	storage: sessionStorage,
+	storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, userReducer);
+const persistedReducer = persistReducer(persistConfig, watchedListReducer);
 const reducers = combineReducers({
-	persistedStore: persistedReducer,
+	watchedListReducer: persistedReducer,
 	genreReducer,
 	configurationReducer,
 	movieReducer,

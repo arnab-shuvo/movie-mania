@@ -45,9 +45,11 @@ export const MovieBlock = styled.div`
 			padding: 10px 15px;
 			background: rgb(182, 24, 119, 0.68);
 			position: absolute;
-			top: 30px;
+			top: 20px;
 			right: 0;
 			z-index: 9;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
 			p {
 				margin: 0;
 				color: #fff;
@@ -59,6 +61,33 @@ export const MovieBlock = styled.div`
 	&:hover {
 		.description {
 			left: 0;
+		}
+	}
+	.add-to-watch {
+		background: #0293bf;
+		padding: 0 10px;
+		color: #fff;
+		font-size: 30px;
+		border: 1px solid #0293bf;
+		transition: all 0.5s ease;
+		cursour: pointer;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		z-index: 11;
+		cursor: pointer;
+		&:hover {
+			background: transparent;
+		}
+		&.disabled {
+			cursor: not-allowed;
+			background: #cdcdcd;
+			border: 1px solid #cdcdcd;
+			&:hover {
+				background: #cdcdcd;
+			}
 		}
 	}
 `;

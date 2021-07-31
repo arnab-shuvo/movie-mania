@@ -1,6 +1,8 @@
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { addWatchedMovie } from 'store/actions/watchedListAction';
 import { OverviewWrapper, PosterImage, OverviewInfo } from './styled';
 
 type IPros = {
@@ -10,8 +12,22 @@ type IPros = {
 
 const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 	const history = useHistory();
+	const dispatch = useDispatch();
+
+	const { watchedListIds } = useSelector((state: any) => state.watchedListReducer);
 	const onGenreCLick = (id: number) => {
 		history.push(`genre/${id}`);
+	};
+
+	const addToWatched = () => {
+		const movie: any = {
+			id: movieDetails.id,
+			overview: movieDetails.overview.substr(0, 155),
+			title: movieDetails.title,
+			poster_path: movieDetails.poster_path,
+			vote_average: movieDetails.vote_average,
+		};
+		dispatch(addWatchedMovie(movie));
 	};
 	return (
 		<OverviewWrapper container justifyContent='center'>
@@ -59,11 +75,13 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 										</div>
 									</Grid>
 								</Grid>
-								<div className='related-info'>
-									<button>
-										<span>+</span> Add To Watch List
-									</button>
-								</div>
+								{!watchedListIds.includes(movieDetails.id) && (
+									<div className='related-info'>
+										<button onClick={addToWatched}>
+											<span>+</span> Add To Watch List
+										</button>
+									</div>
+								)}
 							</div>
 						</Grid>
 					</OverviewInfo>

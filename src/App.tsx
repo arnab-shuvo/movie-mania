@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 import { useDispatch } from 'react-redux';
 import { fetchAllConfiguration } from 'store/actions/configurationAction';
 import { fetchAllgenre } from 'store/actions/genreAction';
+import Watchlist from 'pages/WatchList';
 
 const App: React.FC = () => {
 	const dispatch = useDispatch();
@@ -26,6 +27,9 @@ const App: React.FC = () => {
 					</Route>
 					<Route exact path='/movie/:movieId'>
 						<Movie />
+					</Route>
+					<Route exact path='/watchlist'>
+						<Watchlist />
 					</Route>
 					<Route path='*'>
 						<Home />

@@ -8,7 +8,10 @@ const Home: React.FC = () => {
 
 	return (
 		<Grid container justifyContent={'center'}>
-			<Grid item md={7} lg={7}>
+			<Grid item md={12} lg={12}>
+				as
+			</Grid>
+			<Grid item md={10} lg={10}>
 				{movieListByGenre &&
 					Object.keys(movieListByGenre).map((id: string, index: number) => {
 						return <GenreList key={index} id={id} genre={movieListByGenre[id]} />;
