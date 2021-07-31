@@ -4,6 +4,7 @@ import Genre from './pages/Genre';
 import Movie from './pages/Movie';
 import Home from './pages/Home';
 import Layout from './components/Layout';
+import Loader from './components/Loader';
 import { useDispatch } from 'react-redux';
 import { fetchAllConfiguration } from 'store/actions/configurationAction';
 import { fetchAllgenre } from 'store/actions/genreAction';
@@ -18,8 +19,9 @@ const App: React.FC = () => {
 		dispatch(fetchPopularMovies());
 	}, [dispatch]);
 	return (
-		<Layout>
-			<Router>
+		<Router>
+			<Loader />
+			<Layout>
 				<Switch>
 					<Route exact path='/'>
 						<Home />
@@ -34,11 +36,11 @@ const App: React.FC = () => {
 						<Watchlist />
 					</Route>
 					<Route path='*'>
-						<Home />
+						<h1>Ops!! Page Not Fount</h1>
 					</Route>
 				</Switch>
-			</Router>
-		</Layout>
+			</Layout>
+		</Router>
 	);
 };
 
