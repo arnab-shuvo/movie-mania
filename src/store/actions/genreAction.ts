@@ -1,5 +1,6 @@
 import { get, getMovieByGenreId } from '../../lib/api';
 import { ActionTypes } from '../actionTypes';
+import { setLoader } from './loaderAction';
 
 export const setAllGenreMovie = (data: IGenreMovie) => {
 	return {
@@ -9,6 +10,7 @@ export const setAllGenreMovie = (data: IGenreMovie) => {
 };
 export const fetchAllgenre = () => {
 	return async (dispatch: any) => {
+		dispatch(setLoader(true));
 		const data = await get('genre/movie/list');
 		const genreIds: IGenreMovie = {};
 		data.genres.forEach((el: IGenre) => {
@@ -18,6 +20,7 @@ export const fetchAllgenre = () => {
 			};
 		});
 		dispatch(setAllGenreMovie(genreIds));
+		dispatch(setLoader(false));
 	};
 };
 export const fetchMoviesByGenre = (id: string) => {

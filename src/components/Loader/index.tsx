@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
 
 const LoaderWrapper = styled.div`
@@ -29,10 +30,15 @@ const Loading = styled.div`
 `;
 
 const Loader: React.FC = () => {
+	const { isLoading } = useSelector((state: any) => state.loaderReducer);
 	return (
-		<LoaderWrapper>
-			<Loading />
-		</LoaderWrapper>
+		<>
+			{isLoading && (
+				<LoaderWrapper>
+					<Loading />
+				</LoaderWrapper>
+			)}
+		</>
 	);
 };
 

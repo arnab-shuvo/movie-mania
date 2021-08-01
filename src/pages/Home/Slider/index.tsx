@@ -27,7 +27,8 @@ const Slider: React.FC = () => {
 				}}
 				loop={true}
 				className='mySwiper'>
-				{popularMovies &&
+				{images &&
+					popularMovies &&
 					popularMovies.map((movies: IPopularMovies, index: number) => (
 						<SwiperSlide key={index}>
 							<SliderWrapper

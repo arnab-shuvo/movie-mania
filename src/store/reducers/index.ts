@@ -5,6 +5,7 @@ import genreReducer from './genreReducer';
 import watchedListReducer from './watchedListReducer';
 import configurationReducer from './ConfigurationReducer';
 import movieReducer from './MovieReducer';
+import loaderReducer from './LoaderReducer';
 
 const persistConfig = {
 	key: 'root',
@@ -17,6 +18,7 @@ const reducers = combineReducers({
 	genreReducer,
 	configurationReducer,
 	movieReducer,
+	loaderReducer,
 });
 
 export default reducers;

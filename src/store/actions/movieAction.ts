@@ -6,6 +6,7 @@ import {
 	getPopularMovies,
 } from '../../lib/api';
 import { ActionTypes } from '../actionTypes';
+import { setLoader } from './loaderAction';
 
 export const setMovieDetails = (data: {
 	movieDetails: IMovieDetails;
@@ -19,6 +20,7 @@ export const setMovieDetails = (data: {
 
 export const fetchMovieDetail = (id: string) => {
 	return async (dispatch: any) => {
+		dispatch(setLoader(true));
 		const movieDetails: IMovieDetails = await getMovieDetils(id);
 		const credits: ICredit = await getMovieCredits(id);
 		const imageList: IImages = await getMovieImages(id);
@@ -32,6 +34,7 @@ export const fetchMovieDetail = (id: string) => {
 				similarMovies,
 			}),
 		);
+		dispatch(setLoader(false));
 	};
 };
 

@@ -1,0 +1,3 @@
+interface ILoader {
+	isLoading: boolean;
+}
