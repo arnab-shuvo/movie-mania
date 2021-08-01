@@ -9,4 +9,5 @@ type WatchListMovie = {
 interface IWatchList {
 	watchedList: WatchListMovie[];
 	watchedListIds: number[];
+	recentViews: WatchListMovie[];
 }

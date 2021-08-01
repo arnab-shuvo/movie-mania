@@ -10,6 +10,8 @@ import { fetchAllConfiguration } from 'store/actions/configurationAction';
 import { fetchAllgenre } from 'store/actions/genreAction';
 import { fetchPopularMovies } from 'store/actions/movieAction';
 import Watchlist from 'pages/WatchList';
+import RecentViews from 'pages/RecentViews';
+import Page404 from 'pages/404';
 
 const App: React.FC = () => {
 	const dispatch = useDispatch();
@@ -35,8 +37,11 @@ const App: React.FC = () => {
 					<Route exact path='/watchlist'>
 						<Watchlist />
 					</Route>
+					<Route exact path='/recent'>
+						<RecentViews />
+					</Route>
 					<Route path='*'>
-						<h1>Ops!! Page Not Fount</h1>
+						<Page404 />
 					</Route>
 				</Switch>
 			</Layout>

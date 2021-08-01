@@ -3,6 +3,7 @@ import { ActionTypes } from '../../actionTypes';
 const initialState: IWatchList = {
 	watchedList: [],
 	watchedListIds: [],
+	recentViews: [],
 };
 
 const watchedListReducer = (state = initialState, action: any): IWatchList => {
@@ -12,6 +13,11 @@ const watchedListReducer = (state = initialState, action: any): IWatchList => {
 				...state,
 				watchedList: [...state.watchedList, action.payload],
 				watchedListIds: [...state.watchedListIds, action.payload.id],
+			};
+		case ActionTypes.SET_RECENT:
+			return {
+				...state,
+				recentViews: [...state.recentViews, action.payload],
 			};
 		default:
 			return state;
