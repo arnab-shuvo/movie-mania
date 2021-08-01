@@ -23,7 +23,7 @@ The main purpose of this project is demonstrate my skill on ReactJs for a reknow
 
 1. At first clone the project.
 2. Run `yarn` or `npm install` to install all the dependencies
-3. You will get a file named `env.example`. Modify the API key for TMDB and rename the file to `env` and make a copy named `.env.example`
+3. As this is a private repository, I have uploaded the .env file for your convenience to run the project immediately. So, you will not need to update `env` file
 4. Once installed, run `yarn start` or `npm start`
 5. The project will run by default on `3000` port.
 
