@@ -12,8 +12,6 @@ export const requestaddRecent = (movie: WatchListMovie) => {
 	return async (disptach: any, getState: any) => {
 		const { recentViewsId } = getState().watchedListReducer;
 		if (!recentViewsId.includes(movie.id)) {
-			console.log(recentViewsId, '==recentViewsId');
-
 			disptach(
 				addRecentlyViewedMovie({
 					movie,
