@@ -29,28 +29,36 @@ The main purpose of this project is demonstrate my skill on ReactJs for a reknow
 
 ## Features
 
-1. Home page
-   i.Slider of Popular Movies
-   ii. List of Genres
-   iii. 5 movies from that genre sorted nby Popularity and rating.
-   iv. A link to get details of the Genre
-   v. A button with every movie to add the movie to watch list.
+##### Home page
 
-2. Genre Page
-   i. A list of 10 movies on this particular genre.
-   ii. A button with every movie to add the movie to watch list.
-3. Movie Detail Page
-   i. Overview of the movies
-   ii. A button to add the movie to watch list.
-   iii. The latest video from youtube.
-   iv. Cast list
-   v. Crew List
-   vi. Similar Movies
-4. Watched List
-   i. A list of movies which has been added to watch list.
-5. Recently Viewed Movies
-   i. A list of movies which has been viewed recently.
-   ii. A button with every movie to add the movie to watch list.
+1. Slider of Popular Movies
+2. List of Genres
+3. 5 movies from that genre sorted nby Popularity and rating.
+4. A link to get details of the Genre
+5. A button with every movie to add the movie to watch list.
+
+##### Genre Page
+
+1. A list of 10 movies on this particular genre.
+2. A button with every movie to add the movie to watch list.
+
+##### Movie Detail Page
+
+1. Overview of the movies
+2. A button to add the movie to watch list.
+3. The latest video from youtube.
+4. Cast list
+5. Crew List
+6. Similar Movies
+
+##### Watched List
+
+1. A list of movies which has been added to watch list.
+
+##### Recently Viewed Movies
+
+1. A list of movies which has been viewed recently.
+2. A button with every movie to add the movie to watch list.
 
 ## Imporvements can be done
 
