@@ -17,7 +17,7 @@ const RecentViews: React.FC = () => {
 					{recentViews.length ? (
 						<>
 							{recentViews.map((watched: WatchListMovie, index: number) => (
-								<Grid item xs={6} sm={3}>
+								<Grid key={index} item xs={6} sm={3}>
 									<MovieBlockView movie={watched} />
 								</Grid>
 							))}

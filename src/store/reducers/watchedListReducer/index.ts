@@ -4,6 +4,7 @@ const initialState: IWatchList = {
 	watchedList: [],
 	watchedListIds: [],
 	recentViews: [],
+	recentViewsId: [],
 };
 
 const watchedListReducer = (state = initialState, action: any): IWatchList => {
@@ -17,7 +18,8 @@ const watchedListReducer = (state = initialState, action: any): IWatchList => {
 		case ActionTypes.SET_RECENT:
 			return {
 				...state,
-				recentViews: [...state.recentViews, action.payload],
+				recentViews: [action.payload.movie, ...state.recentViews],
+				recentViewsId: [action.payload.id, ...state.recentViewsId],
 			};
 		default:
 			return state;

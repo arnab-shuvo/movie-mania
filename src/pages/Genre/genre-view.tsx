@@ -17,7 +17,7 @@ const GenreView: React.FC<IProps> = ({ genreData, genreId }) => {
 					{movieList &&
 						movieList.map((movie: IMovie, index: number) => {
 							return (
-								<Grid item md={3} lg={3} xs={6}>
+								<Grid key={index} item md={3} lg={3} xs={6}>
 									<MovieBlock movie={movie} />
 								</Grid>
 							);

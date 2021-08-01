@@ -7,7 +7,7 @@ import {
 } from '../../lib/api';
 import { ActionTypes } from '../actionTypes';
 import { setLoader } from './loaderAction';
-import { addRecentlyViewedMovie } from './watchedListAction';
+import { requestaddRecent } from './watchedListAction';
 
 export const setMovieDetails = (data: {
 	movieDetails: IMovieDetails;
@@ -42,7 +42,7 @@ export const fetchMovieDetail = (id: string) => {
 			title: movieDetails.title,
 			vote_average: movieDetails.vote_average,
 		};
-		dispatch(addRecentlyViewedMovie(recentViews));
+		dispatch(requestaddRecent(recentViews));
 		dispatch(setLoader(false));
 	};
 };

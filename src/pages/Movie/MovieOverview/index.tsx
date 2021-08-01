@@ -48,14 +48,16 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 								<div className='genre-info'>
 									{movieDetails.genres.map(
 										(genre: { name: string; id: number }, index: number) => (
-											<span onClick={() => onGenreCLick(genre.id)}>
+											<span
+												key={index}
+												onClick={() => onGenreCLick(genre.id)}>
 												{genre.name}
 											</span>
 										),
 									)}
 								</div>
 								<Grid container>
-									<Grid md={6} lg={6} xs={6}>
+									<Grid item md={6} lg={6} xs={6}>
 										<div className='related-info'>
 											<p>
 												<span>Rating: </span>
@@ -66,7 +68,7 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 											</p>
 										</div>
 									</Grid>
-									<Grid md={6} lg={6} xs={6}>
+									<Grid item md={6} lg={6} xs={6}>
 										<div className='related-info'>
 											<p>
 												<span>Popularity Score: </span>

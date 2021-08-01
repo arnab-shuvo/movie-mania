@@ -29,7 +29,7 @@ const CreditSection: React.FC<IProps> = ({ creditData, title }) => {
 				navigation={true}
 				className='mySwiper'>
 				{creditData.map((credit: CreditSingle, index: number) => (
-					<SwiperSlide>
+					<SwiperSlide key={index}>
 						<CreditImage
 							title={title}
 							bg={imageBuilder(

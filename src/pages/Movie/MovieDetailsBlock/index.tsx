@@ -23,16 +23,16 @@ const MovieDetailsBlock: React.FC = () => {
 						<p className='title'>Movie Information</p>
 						<ul>
 							{Object.keys(informations).map((key: any, index: number) => (
-								<>
+								<React.Fragment key={index}>
 									{movieDetails[key] ? (
-										<li key={index}>
+										<li>
 											<p className='name'>{informations[key]}</p>
 											<p className='value'>{movieDetails[key]}</p>
 										</li>
 									) : (
 										''
 									)}
-								</>
+								</React.Fragment>
 							))}
 						</ul>
 					</MovieDetailSidebar>

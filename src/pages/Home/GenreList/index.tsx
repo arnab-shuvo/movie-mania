@@ -28,16 +28,16 @@ const GenreList: React.FC<IGenreList> = ({ genre, id }) => {
 			<Grid container item md={12} lg={12} xs={11} spacing={2}>
 				{!movieListByGenre[id].movieList.length ? (
 					<>
-						<Grid md={3}>
+						<Grid item md={3}>
 							<BulletList />
 						</Grid>
-						<Grid md={3}>
+						<Grid item md={3}>
 							<BulletList />
 						</Grid>
-						<Grid md={3}>
+						<Grid item md={3}>
 							<BulletList />
 						</Grid>
-						<Grid md={3}>
+						<Grid item md={3}>
 							<BulletList />
 						</Grid>
 					</>
