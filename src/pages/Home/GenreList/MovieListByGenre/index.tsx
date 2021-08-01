@@ -19,13 +19,13 @@ const MovieListByGenre: React.FC<IProps> = ({ movieList, genreId }) => {
 		<>
 			{movieList.map((movie: IMovie, index: number) => {
 				return (
-					<Grid key={index} item md={3} lg={3} sm={6} xs={12}>
+					<Grid key={index} item md={3} lg={3} sm={6} xs={6}>
 						<MovieBlockView movie={movie} />
 					</Grid>
 				);
 			})}
 
-			<Grid item md={3} lg={3} sm={6} xs={12}>
+			<Grid item md={3} lg={3} sm={6} xs={6}>
 				<SeeMoreBlock bg={image} onClick={() => goToGenre(genreId)}>
 					<div className='content'>
 						<p>See More</p>

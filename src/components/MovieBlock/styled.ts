@@ -11,6 +11,9 @@ export const MovieBlock = styled.div`
 		overflow: hidden;
 		border-radius: 10px;
 		position: relative;
+		@media screen and (max-width: 767px) {
+			height: 150px;
+		}
 
 		.description {
 			box-sizing: border-box;
@@ -37,6 +40,9 @@ export const MovieBlock = styled.div`
 					border-bottom: 1px solid #fff;
 					margin-bottom: 10px;
 				}
+			}
+			@media screen and (max-width: 767px) {
+				display: none;
 			}
 		}
 
@@ -88,6 +94,16 @@ export const MovieBlock = styled.div`
 			&:hover {
 				background: #cdcdcd;
 			}
+		}
+	}
+	.mobile-description {
+		.title {
+			font-weight: bold;
+			color: #0293bf;
+			margin: 5px 0;
+		}
+		@media screen and (min-width: 768px) {
+			display: none;
 		}
 	}
 `;

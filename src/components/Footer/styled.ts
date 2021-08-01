@@ -21,6 +21,7 @@ export const FooterWrapper = styled(Grid)`
 	}
 	ul {
 		margin: 0;
+		margin-bottom: 20px;
 		padding: 0;
 		li {
 			list-style: none;

@@ -44,4 +44,15 @@ export const HeaderWrapper = styled(Grid)`
 			}
 		}
 	}
+
+	@media screen and (max-width: 1023px) {
+		.normal-menu {
+			display: none;
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		.mobile-menu {
+			display: none;
+		}
+	}
 `;

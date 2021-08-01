@@ -10,3 +10,20 @@ div {
 p {
 	margin: 0;
 }
+
+.drawer-menu .MuiDrawer-paper {
+	background: #132f60;
+	padding: 30px 20px;
+}
+.drawer-menu .mobile-navigation {
+	padding: 0;
+}
+
+.drawer-menu .mobile-navigation li {
+	list-style: none;
+	margin-bottom: 30px;
+}
+.drawer-menu .mobile-navigation li a {
+	color: #fff;
+	font-weight: bold;
+}

@@ -21,11 +21,11 @@ const GenreList: React.FC<IGenreList> = ({ genre, id }) => {
 	const movieList = movieListByGenre[id].movieList.slice(0, 5);
 
 	return (
-		<GenreListWrapper container>
+		<GenreListWrapper container justifyContent={'center'}>
 			<Grid item md={12} lg={12}>
 				<p className='section-header'>{genre.name}</p>
 			</Grid>
-			<Grid container item md={12} lg={12} spacing={2}>
+			<Grid container item md={12} lg={12} xs={11} spacing={2}>
 				{!movieListByGenre[id].movieList.length ? (
 					<>
 						<Grid md={3}>

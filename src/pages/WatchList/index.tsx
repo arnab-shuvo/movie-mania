@@ -8,13 +8,13 @@ const Watchlist: React.FC = () => {
 	const { watchedList } = useSelector((state: any) => state.watchedListReducer);
 	const { images } = useSelector((state: any) => state.configurationReducer);
 	return (
-		<WatchListWrapper container justifyContent='center'>
+		<WatchListWrapper container justifyContent='center' alignItems={'flex-start'}>
 			{images && (
-				<Grid container item md={7} lg={7} xl={7} spacing={3}>
+				<Grid container item md={10} lg={10} xl={10} spacing={3}>
 					<Grid item xs={12}>
 						<p className='title'>Watch List</p>
 					</Grid>
-					{watchedList ? (
+					{watchedList.length ? (
 						<>
 							{watchedList.map((watched: WatchListMovie, index: number) => (
 								<Grid item xs={12} sm={3}>
@@ -23,7 +23,9 @@ const Watchlist: React.FC = () => {
 							))}
 						</>
 					) : (
-						'No List Found'
+						<Grid item xs={12} sm={3}>
+							'No List Found'
+						</Grid>
 					)}
 				</Grid>
 			)}

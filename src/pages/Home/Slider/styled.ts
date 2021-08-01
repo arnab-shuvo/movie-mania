@@ -6,9 +6,9 @@ export const SliderWrapper = styled.div`
 	background-image: url(${(props: { bg: string }) => props.bg});
 	background-size: cover;
 	background-position: top;
-	width: 100%;
 	position: relative;
 	cursor: pointer;
+	max-width: 100%;
 	&:after {
 		content: '';
 		position: absolute;
@@ -17,6 +17,10 @@ export const SliderWrapper = styled.div`
 		background: rgba(0, 0, 0, 0.6);
 		left: 0;
 		top: 0;
+	}
+	@media screen and (max-width: 767px) {
+		height: 200px;
+		max-width: 100vw;
 	}
 `;
 export const SliderContainer = styled.div`
@@ -33,5 +37,14 @@ export const SliderGrid = styled(Grid)`
 	}
 	.overview {
 		font-size: 20px;
+	}
+	@media screen and (max-width: 767px) {
+		.title {
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+		.overview {
+			font-size: 8px;
+		}
 	}
 `;

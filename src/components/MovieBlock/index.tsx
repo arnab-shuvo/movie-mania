@@ -47,6 +47,9 @@ const MovieBlockView: React.FC<Iprops> = ({ movie }) => {
 					+
 				</button>
 			</div>
+			<div className={'mobile-description'}>
+				<p className='title'>{movie.title}</p>
+			</div>
 		</MovieBlock>
 	);
 };

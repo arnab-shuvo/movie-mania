@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const WatchListWrapper = styled(Grid)`
 	padding: 40px 0;
+	min-height: 80vh;
 	.title {
 		border-bottom: 1px solid #cdcdcd;
 		padding-bottom: 10px;

@@ -38,7 +38,7 @@ const Slider: React.FC = () => {
 									container
 									justifyContent={'center'}
 									alignItems={'center'}>
-									<Grid item md={10}>
+									<Grid item xs={11}>
 										<p className='title'>{movies.title}</p>
 										<p className='overview'>{movies.overview}</p>
 									</Grid>

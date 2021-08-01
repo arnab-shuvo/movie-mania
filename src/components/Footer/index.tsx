@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 const Footer: React.FC = ({ children }) => {
 	return (
 		<FooterWrapper container justifyContent={'center'}>
-			<Grid container item md={8} lg={8}>
-				<Grid item md={3} lg={3} xs={12}>
+			<Grid container item md={10} lg={10} xs={11}>
+				<Grid item md={3} lg={3} xs={6}>
 					<p className='logo'>
 						<Link to={'/'}>
 							Movie <span>Mania</span>
 						</Link>
 					</p>
 				</Grid>
-				<Grid item md={3} lg={3} xs={12}>
+				<Grid item md={3} lg={3} xs={6}>
 					<ul>
 						<li className='title'>THE BASICS</li>
 						<li>
@@ -34,7 +34,7 @@ const Footer: React.FC = ({ children }) => {
 						</li>
 					</ul>
 				</Grid>
-				<Grid item md={3} lg={3} xs={12}>
+				<Grid item md={3} lg={3} xs={6}>
 					<ul>
 						<li className='title'>Contribute</li>
 						<li>
@@ -51,7 +51,7 @@ const Footer: React.FC = ({ children }) => {
 						</li>
 					</ul>
 				</Grid>
-				<Grid item md={3} lg={3} xs={12}>
+				<Grid item md={3} lg={3} xs={6}>
 					<ul>
 						<li className='title'>Community</li>
 						<li>

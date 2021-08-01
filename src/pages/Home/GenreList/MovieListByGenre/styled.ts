@@ -36,4 +36,7 @@ export const SeeMoreBlock = styled.div`
 		background: rgb(0, 0, 0, 0.8);
 		z-index: 11;
 	}
+	@media screen and (max-width: 767px) {
+		height: 150px;
+	}
 `;
