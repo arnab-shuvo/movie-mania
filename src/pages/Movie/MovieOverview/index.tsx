@@ -99,9 +99,12 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 									<button className='add-to-watch' onClick={handleOpen}>
 										Watch Video
 									</button>
-									<CustomModal handleClose={handleClose} open={open}>
-										<h3>{movieDetails.title}</h3>
+									<CustomModal
+										handleClose={handleClose}
+										open={open}
+										title={movieDetails.title}>
 										<ReactPlayer
+											width={'100%'}
 											url={`https://www.youtube.com/watch?v=${movieDetails.videos.results[0].key}`}
 										/>
 									</CustomModal>

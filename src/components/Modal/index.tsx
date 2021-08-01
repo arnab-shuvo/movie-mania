@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core/styles';
+import { ModalWrap } from './styled';
 
 const useStyles = makeStyles((theme) => ({
 	modal: {
@@ -14,16 +15,17 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: '#f7f7f9',
 		border: '2px solid #000',
 		boxShadow: theme.shadows[5],
-		padding: theme.spacing(2, 4, 3),
+		padding: '10px',
 	},
 }));
 
 interface IModal {
 	open: boolean;
 	handleClose: () => void;
+	title: string;
 }
 
-const CustomModal: React.FC<IModal> = ({ children, open, handleClose }) => {
+const CustomModal: React.FC<IModal> = ({ children, open, handleClose, title }) => {
 	const classes = useStyles();
 	return (
 		<Modal
@@ -38,7 +40,12 @@ const CustomModal: React.FC<IModal> = ({ children, open, handleClose }) => {
 				timeout: 500,
 			}}>
 			<Fade in={open}>
-				<div className={classes.paper}>{children}</div>
+				<div className={classes.paper}>
+					<ModalWrap>
+						<p className={'title'}>{title}</p>
+						{children}
+					</ModalWrap>
+				</div>
 			</Fade>
 		</Modal>
 	);

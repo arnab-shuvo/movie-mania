@@ -78,6 +78,9 @@ export const OverviewWrapper = styled(Grid)`
 
 export const OverviewInfo = styled(Grid)`
 	height: 100%;
+	.modal-body {
+		width: 600px;
+	}
 `;
 
 export const PosterImage = styled.div`
