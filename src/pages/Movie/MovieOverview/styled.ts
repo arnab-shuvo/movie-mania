@@ -65,6 +65,7 @@ export const OverviewWrapper = styled(Grid)`
 				transition: all 0.5s ease;
 				border-radius: 15px;
 				cursor: pointer;
+				margin-right: 10px;
 				&:hover {
 					border: 1px solid #0293bf;
 					background: transparent;

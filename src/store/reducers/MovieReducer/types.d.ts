@@ -69,7 +69,6 @@ type IMovieDetails = {
 	video: boolean;
 	status: string;
 	vote_average: number;
-	video: boolean;
 	vote_count: number;
 	belongs_to_collection: {
 		name: string;
@@ -79,6 +78,13 @@ type IMovieDetails = {
 	original_language: string;
 	release_date: string;
 	status: string;
+	videos: {
+		results: {
+			id: string;
+			key: string;
+			site: string;
+		}[];
+	};
 };
 
 type IPopularMovies = {

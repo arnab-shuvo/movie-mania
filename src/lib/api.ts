@@ -45,7 +45,7 @@ export const getMovieByGenreId = async (genres: string) => {
 export const getMovieDetils = async (id: string) => {
 	try {
 		const response = await fetch(
-			`${REACT_APP_API_BASE_URL}movie/${id}?api_key=${REACT_APP_API_KEY}`,
+			`${REACT_APP_API_BASE_URL}movie/${id}?api_key=${REACT_APP_API_KEY}&append_to_response=videos`,
 			{
 				method: 'GET',
 				headers: {

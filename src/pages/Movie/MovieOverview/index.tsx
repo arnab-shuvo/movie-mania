@@ -1,9 +1,12 @@
 import Grid from '@material-ui/core/Grid';
+import CustomModal from 'components/Modal';
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addWatchedMovie } from 'store/actions/watchedListAction';
 import { OverviewWrapper, PosterImage, OverviewInfo } from './styled';
+import ReactPlayer from 'react-player';
 
 type IPros = {
 	movieDetails: IMovieDetails;
@@ -13,6 +16,13 @@ type IPros = {
 const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
+	const [open, setOpen] = useState<boolean>(false);
+	const handleClose = () => {
+		setOpen(false);
+	};
+	const handleOpen = () => {
+		setOpen(true);
+	};
 
 	const { watchedListIds } = useSelector((state: any) => state.watchedListReducer);
 	const onGenreCLick = (id: number) => {
@@ -79,13 +89,23 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 										</div>
 									</Grid>
 								</Grid>
-								{!watchedListIds.includes(movieDetails.id) && (
-									<div className='related-info'>
+
+								<div className='related-info'>
+									{!watchedListIds.includes(movieDetails.id) && (
 										<button className='add-to-watch' onClick={addToWatched}>
 											<span>+</span> Add To Watch List
 										</button>
-									</div>
-								)}
+									)}
+									<button className='add-to-watch' onClick={handleOpen}>
+										Watch Video
+									</button>
+									<CustomModal handleClose={handleClose} open={open}>
+										<h3>{movieDetails.title}</h3>
+										<ReactPlayer
+											url={`https://www.youtube.com/watch?v=${movieDetails.videos.results[0].key}`}
+										/>
+									</CustomModal>
+								</div>
 							</div>
 						</Grid>
 					</OverviewInfo>
