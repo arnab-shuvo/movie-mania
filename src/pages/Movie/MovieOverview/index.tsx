@@ -16,7 +16,7 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 
 	const { watchedListIds } = useSelector((state: any) => state.watchedListReducer);
 	const onGenreCLick = (id: number) => {
-		history.push(`genre/${id}`);
+		history.push(`/genre/${id}`);
 	};
 
 	const addToWatched = () => {
@@ -31,7 +31,7 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 	};
 	return (
 		<OverviewWrapper container justifyContent='center'>
-			<Grid item md={7} lg={7} xl={7}>
+			<Grid item md={7} lg={7} xl={7} xs={11}>
 				<div className='wrapper'>
 					<OverviewInfo container spacing={3} alignItems='center'>
 						<Grid item md={3} lg={3} xl={3} sm={3} xs={12}>
@@ -58,8 +58,8 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 									<Grid md={6} lg={6} xs={6}>
 										<div className='related-info'>
 											<p>
-												Rating:{' '}
-												<span>
+												<span>Rating: </span>
+												<span className={'value'}>
 													{movieDetails.vote_average}/(
 													{movieDetails.vote_count})
 												</span>
@@ -69,8 +69,10 @@ const MovieOverview: React.FC<IPros> = ({ movieDetails, imageConfig }) => {
 									<Grid md={6} lg={6} xs={6}>
 										<div className='related-info'>
 											<p>
-												Popularity Score:{' '}
-												<span>{movieDetails.popularity}</span>
+												<span>Popularity Score: </span>
+												<span className={'value'}>
+													{movieDetails.popularity}
+												</span>
 											</p>
 										</div>
 									</Grid>

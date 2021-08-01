@@ -23,7 +23,7 @@ const CreditSection: React.FC<IProps> = ({ creditData, title }) => {
 		<CreditSectionWrapper>
 			<p className={'title'}>{title}</p>
 			<Swiper
-				slidesPerView={title === 'Crew' ? 8 : 5}
+				slidesPerView={window.screen.width < 767 ? 3 : title === 'Crew' ? 8 : 5}
 				spaceBetween={10}
 				pagination={false}
 				navigation={true}

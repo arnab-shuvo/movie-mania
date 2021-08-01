@@ -39,7 +39,7 @@ const Movie: React.FC = () => {
 							<MovieOverview movieDetails={movieDetails} imageConfig={images} />
 						</Banner>
 					</Grid>
-					<Grid item md={7} lg={7}>
+					<Grid item md={7} lg={7} xs={11}>
 						<MovieDetailsBlock />
 					</Grid>
 				</Grid>

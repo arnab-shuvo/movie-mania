@@ -10,14 +10,14 @@ const Watchlist: React.FC = () => {
 	return (
 		<WatchListWrapper container justifyContent='center' alignItems={'flex-start'}>
 			{images && (
-				<Grid container item md={10} lg={10} xl={10} spacing={3}>
+				<Grid container item md={10} xs={11} lg={10} xl={10} spacing={3}>
 					<Grid item xs={12}>
 						<p className='title'>Watch List</p>
 					</Grid>
 					{watchedList.length ? (
 						<>
 							{watchedList.map((watched: WatchListMovie, index: number) => (
-								<Grid item xs={12} sm={3}>
+								<Grid item xs={6} sm={3}>
 									<MovieBlockView movie={watched} />
 								</Grid>
 							))}

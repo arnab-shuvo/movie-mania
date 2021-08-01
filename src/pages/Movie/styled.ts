@@ -5,7 +5,6 @@ export const Banner = styled.div`
 	background-size: cover;
 	background-position: top center;
 	width: 100%;
-	height: 400px;
 	position: relative;
 	&:after {
 		content: '';

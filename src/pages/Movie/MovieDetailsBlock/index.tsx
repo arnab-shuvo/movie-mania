@@ -17,8 +17,8 @@ const MovieDetailsBlock: React.FC = () => {
 	};
 	return (
 		<MovieDetailWrapper>
-			<Grid container spacing={3}>
-				<Grid item md={3} lg={3} xl={3} sm={3} xs={12}>
+			<Grid container spacing={3} justifyContent='center'>
+				<Grid item md={3} lg={3} xl={3} sm={3} xs={11}>
 					<MovieDetailSidebar>
 						<p className='title'>Movie Information</p>
 						<ul>
@@ -37,11 +37,11 @@ const MovieDetailsBlock: React.FC = () => {
 						</ul>
 					</MovieDetailSidebar>
 				</Grid>
-				<Grid item md={9} lg={9} xl={9} sm={9} xs={12}>
+				<Grid item md={9} lg={9} xl={9} sm={9} xs={11}>
 					<CreditSection creditData={credits.cast} title={'Cast'} />
 					<CreditSection creditData={credits.crew} title={'Crew'} />
 				</Grid>
-				<Grid item md={12} lg={12} xl={12} sm={12} xs={12}>
+				<Grid item md={12} lg={12} xl={12} sm={12} xs={11}>
 					<RelatedMoviesSection movies={similarMovies} />
 				</Grid>
 			</Grid>

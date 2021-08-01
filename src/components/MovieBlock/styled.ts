@@ -101,6 +101,8 @@ export const MovieBlock = styled.div`
 			font-weight: bold;
 			color: #0293bf;
 			margin: 5px 0;
+			font-size: 12px;
+			border-bottom: 0;
 		}
 		@media screen and (min-width: 768px) {
 			display: none;

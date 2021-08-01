@@ -13,11 +13,11 @@ const GenreView: React.FC<IProps> = ({ genreData, genreId }) => {
 	return (
 		<GenreMoviesWrapper>
 			<Grid container justifyContent='center'>
-				<Grid container item md={10} lg={10} spacing={2}>
+				<Grid container item md={10} lg={10} xs={11} spacing={2}>
 					{movieList &&
 						movieList.map((movie: IMovie, index: number) => {
 							return (
-								<Grid item md={3} lg={3}>
+								<Grid item md={3} lg={3} xs={6}>
 									<MovieBlock movie={movie} />
 								</Grid>
 							);

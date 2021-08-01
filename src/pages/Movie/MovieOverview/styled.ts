@@ -26,6 +26,7 @@ export const OverviewWrapper = styled(Grid)`
 				display: inline-block;
 				padding: 5px 10px;
 				margin-right: 20px;
+				margin-top: 10px;
 				border: 1px solid #0293bf;
 				color: #0293bf;
 				border-radius: 10px;
@@ -41,8 +42,18 @@ export const OverviewWrapper = styled(Grid)`
 			margin-top: 20px;
 			p {
 				span {
-					padding-left: 20px;
-					font-weight: bold;
+					&.value {
+						padding-left: 20px;
+						font-weight: bold;
+					}
+					@media screen and (max-width: 767px) {
+						display: block;
+						&.value {
+							padding-left: 0;
+							padding-top: 10px;
+							font-weight: bold;
+						}
+					}
 				}
 			}
 			.add-to-watch {
